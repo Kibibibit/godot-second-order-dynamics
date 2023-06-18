@@ -42,9 +42,9 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = 2.0
+offset_top = 6.0
 offset_right = 301.0
-offset_bottom = 86.0
+offset_bottom = 122.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -74,7 +74,7 @@ value = 0.2
 
 [node name="Label" type="Label" parent="Control/VBoxContainer/z_slider"]
 layout_mode = 2
-text = "F"
+text = "Z"
 
 [node name="r_slider" type="HBoxContainer" parent="Control/VBoxContainer"]
 layout_mode = 2
@@ -89,7 +89,21 @@ value = 1.0
 
 [node name="Label" type="Label" parent="Control/VBoxContainer/r_slider"]
 layout_mode = 2
-text = "F"
+text = "R"
+
+[node name="speed_slider" type="HBoxContainer" parent="Control/VBoxContainer"]
+layout_mode = 2
+
+[node name="Slider" type="HSlider" parent="Control/VBoxContainer/speed_slider"]
+layout_mode = 2
+size_flags_horizontal = 3
+min_value = 1.0
+max_value = 5000.0
+value = 10.0
+
+[node name="Label" type="Label" parent="Control/VBoxContainer/speed_slider"]
+layout_mode = 2
+text = "S"
 
 [node name="Target" type="Node2D" parent="."]
 script = ExtResource("1_47u24")
