@@ -3,10 +3,13 @@ extends Node2D
 var target: Node2D
 
 @onready
-var dynamics: SecondOrderDynamics = $"../Target/SecondOrderDynamics"
+var dynamics: SecondOrderDynamics = $"SecondOrderDynamics"
+
+@export
+var target_name: String
 
 func _ready():
-	target = get_parent().get_node("Target")
+	target = get_parent().get_node(target_name)
 	dynamics.init(position)
 
 

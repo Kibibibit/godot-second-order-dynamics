@@ -9,12 +9,25 @@
 
 [node name="Follower" type="Node2D" parent="."]
 script = ExtResource("2_g0r5a")
+target_name = "Target"
 
-[node name="Target" type="Node2D" parent="."]
-script = ExtResource("1_47u24")
-
-[node name="SecondOrderDynamics" type="Node" parent="Target"]
+[node name="SecondOrderDynamics" type="Node" parent="Follower"]
 script = ExtResource("2_ovvby")
+
+[node name="Tail" type="Node2D" parent="."]
+script = ExtResource("2_g0r5a")
+target_name = "Follower"
+
+[node name="SecondOrderDynamics" type="Node" parent="Tail"]
+script = ExtResource("2_ovvby")
+
+[node name="Graph" type="Node2D" parent="."]
+script = ExtResource("4_cnp45")
+
+[node name="SecondOrderDynamics" type="Node" parent="Graph"]
+script = ExtResource("2_ovvby")
+_z = 0.2
+_r = 1.0
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
@@ -78,10 +91,5 @@ value = 1.0
 layout_mode = 2
 text = "F"
 
-[node name="Graph" type="Node2D" parent="."]
-script = ExtResource("4_cnp45")
-
-[node name="SecondOrderDynamics" type="Node" parent="Graph"]
-script = ExtResource("2_ovvby")
-_z = 0.2
-_r = 1.0
+[node name="Target" type="Node2D" parent="."]
+script = ExtResource("1_47u24")
